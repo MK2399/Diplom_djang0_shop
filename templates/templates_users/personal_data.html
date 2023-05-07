@@ -1,0 +1,21 @@
+{% extends "templates_shop/base.html" %}
+{% load static %}
+
+{% block title %}
+  Личные данные
+{% endblock %}
+
+{% block content %}
+
+    {% if user.userprofile.photo %}
+      <p class="btn-secondary mb-6">Изоображение профиля:</p><br/><img src="{{ user.userprofile.photo.url }}" height=100 width=100><br><br>
+    {% else %}
+      <p class="btn-secondary mb-6">Изоображение профиля:</p><br/><img src="{% static 'image/no-image-icon.png' %}" height=100 width=100><br><br>
+    {% endif %}
+    <p class="btn-secondary mb-6">Имя: <p class="btn mb-4">{{ user.first_name }}</p></p>
+    <p class="btn-secondary mb-6">Фамилия: <p class="btn mb-4">{{ user.last_name }}</p></p>
+    <p class="btn-secondary mb-6">email: <p class="btn mb-4">{{ user.email }}</p></p>
+    <p class="btn-secondary mb-6">Дата рождения: <p class="btn mb-4">{{ user.userprofile.date_of_birth }}</p>
+    <a class="btn mb-4" href="/users/edit_profile/">Редактировать данные</a>
+
+{% endblock %}

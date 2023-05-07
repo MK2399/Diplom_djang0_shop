@@ -1,0 +1,15 @@
+{% extends 'templates_shop/base.html' %}
+{% load static %}
+
+{% block title %}
+Создание заказа
+{% endblock %}
+
+{% block content %}
+
+    <h1>Спасибо за покупку</h1>
+    <p>Ваш заказ был успешно создан. Номер вашего заказа:
+        <strong>{{ order.id }}</strong>.</p>
+    <a class="btn mb-4" href="/">Вернуться к покупкам</a>
+
+{% endblock %}
