@@ -1,0 +1,13 @@
+{% extends "templates_shop/base.html" %}
+{% block title %}
+    Регистрация пользователя
+{% endblock %}
+{% block content %}
+    <div id="registr">
+        <form action="/users/register/" method="post">
+            {{ user_form.as_p }}
+            {% csrf_token %}
+            <input id="btn" type="submit" value="Зарегестрироваться">
+        </form>
+    </div>
+{% endblock %}

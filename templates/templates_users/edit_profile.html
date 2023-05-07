@@ -1,0 +1,14 @@
+{% extends "templates_shop/base.html" %}
+{% load static %}
+{% block title %}Редактор профиля{% endblock %}
+
+{% block content %}
+    <h1>Отредактируйте ваш профиль</h1>
+    <p>Вы можете отредактировать свой профиль используя следующую форму:</p>
+    <form action="/users/edit_profile/" method="post" enctype="multipart/form-data">
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+        {% csrf_token %}
+        <p><input class="btn mb-4" type="submit" value="Сохранить изменения"></p>
+    </form>
+{% endblock %}
